@@ -4,12 +4,8 @@ const auth = require("../middelware/auth");
 const justify = require("../Controller/justifyText");
 
 const router = express.Router();
-router.get("/", function (req, res) {
-  console.log("get user");
-  res.send(`Bienvenue Veuillez ajouter api/token à l'url pour pouvoir accéder à notre API de justification`);
-})
+
 router.post("/api/token", async (req, res, next) => {
-  console.log("api/token");
   //Login a registered user && token verification
   try {
     const { email } = req.body;
@@ -70,33 +66,32 @@ const parseRawBody = (req, res, next) => {
 };
 router.use(parseRawBody);
 router.post("/api/justify", auth, async (req, res) => {
-  
+  const user = User.findOne({ _id: req.id, "token.value": req.token });
 
   //verify input text
   if (req.is("text") === "text") {
     //ratelimit verification
-   console.log("limit",req.user.token.limit);
-   
-   let newNumberOfWords = req.user.token.limit + req.rawBody.trim().split(" ").length;
-   console.log("newNumberOfWords", newNumberOfWords);
-    if (newNumberOfWords >= 700) {
+
+    let newNumberOfWords =
+      req.user.token.limit + req.rawBody.trim().split(" ").length;
+    if (newNumberOfWords >= 80000) {
       return res.status(402).send("payment required");
     } else {
       //justify text
       res.setHeader("Content-Type", "text/plain; charset=UTF-8");
       res.send(justify(req.rawBody));
-     
+
       User.findByIdAndUpdate(
         req.user._id,
         { $set: { "token.limit": newNumberOfWords } },
         { new: true },
-       (err, doc) => {
-        if (!err) {
-          console.log(doc);
-        } else {
-          console.log(  'Error in user update:');
+        (err, doc) => {
+          if (!err) {
+            console.log(doc);
+          } else {
+            console.log("Error in user update:");
+          }
         }
-      }
       );
 
     }
