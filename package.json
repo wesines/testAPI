@@ -7,23 +7,22 @@
     "node": "16.14.0"
   },
   "scripts": {
-    "start": "env-cmd -f ./.env nodemon index.js"
+    "start": "node index.js"
   },
   "author": "Ines Attia",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.1.3",
+    "env-cmd": "^10.1.0",
     "express": "^4.17.3",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.4.0",
-    "mongoose": "^6.2.3"  ,
-    "env-cmd": "^10.1.0",
+    "mongoose": "^6.2.3",
     "nodemon": "^2.0.15"
   },
- "DevDependencies":{
-       "env-cmd": "^10.1.0",
+  "DevDependencies": {
+    "env-cmd": "^10.1.0",
     "nodemon": "^2.0.15"
   }
- }
-
+}

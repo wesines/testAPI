@@ -1,1 +1,1 @@
-web:./.env nodemon index.js
+web:npm start
