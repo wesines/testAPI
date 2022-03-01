@@ -1,0 +1,59 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\wesin\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js start
+
+PATH: 
+  C:\Users\wesin\.platformsh\bin;C:\Users\wesin\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\wesin\bin;C:\Python310\Scripts;C:\Python310;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Amazon\AWSCLI\bin;C:\MAMP\bin\php\php8.0.1;C:\Program Files\Git\cmd;C:\composer;C:\Program Files (x86)\dotnet;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;C:\Users\wesin\AppData\Local\Microsoft\WindowsApps;C:\Users\wesin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\wesin\AppData\Roaming\Composer\vendor\bin;C:\Users\wesin\AppData\Roaming\npm;C:\Program Files\heroku\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  16.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\workspace\doranco\react\js\JustifyAPI\package.json: Unexpected token } in JSON at position 564
+      at JSON.parse (<anonymous>)
+      at C:\Users\wesin\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\wesin\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\wesin\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "engines": {
+      "node": "16.14.0"
+    },
+    "scripts": {
+      "start": "env-cmd -f ./.env nodemon index.js"
+    },
+    "author": "Ines Attia",
+    "license": "ISC",
+    "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "bootstrap": "^5.1.3",
+      "express": "^4.17.3",
+      "jsonwebtoken": "^8.5.1",
+      "mongodb": "^4.4.0",
+      "mongoose": "^6.2.3"  ,
+      "env-cmd": "^10.1.0",
+      "nodemon": "^2.0.15"
+    },
+   "DevDependencies":{
+         "env-cmd": "^10.1.0",
+      "nodemon": "^2.0.15"
+    }
+   }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
